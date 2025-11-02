@@ -24,7 +24,7 @@ int main() {
     Configuracion config = {0};
 
     // se carga la configuracion
-    if (parsear_config("ejemplo2.txt", &config) != 0) { // <------------- se cambia el campo txt para elegir configuraciones (campo, heroes, mosntruos)
+    if (parsear_config("config.txt", &config) != 0) { // <------------- se cambia el campo txt para elegir configuraciones (campo, heroes, mosntruos)
         fprintf(stderr, "Error al leer config.txt\n");
         return 1;
     }
