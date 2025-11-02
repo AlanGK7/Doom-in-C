@@ -98,7 +98,7 @@ static void perseguir_y_atacar(Grid* grid, Monstruo* self) {
     // ataca al heroe mas cercano
     if (min_dist <= self->attack_range) {
         
-        // ataca si esta vivo
+        // ataca solamente si esta vivo
         pthread_mutex_lock(&grid->locks_monstruos[self->id - 1]);
         int aun_vivo = self->hp > 0;
         pthread_mutex_unlock(&grid->locks_monstruos[self->id - 1]);
