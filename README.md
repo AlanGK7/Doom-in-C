@@ -12,9 +12,9 @@ Al clonar el repositorio y acceder a la carpeta como tal se ejecuta el siguiente
 make clean && make run
 ```
 
-[!IMPORTANT]
->Existen 4 archivos en el cual se hacen pruebas.
->Se debe modificar la este estracto de codigo en *main.c*:
+> [!IMPORTANT]
+> Existen 4 archivos en el cual se hacen pruebas.
+> Se debe modificar la este estracto de codigo en *main.c*:
 
 ```C
 // cargar la configuración
