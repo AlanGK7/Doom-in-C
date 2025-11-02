@@ -65,6 +65,7 @@ static void alertar_otros(Grid* grid, Monstruo* self) {
 }
 
 static void perseguir_y_atacar(Grid* grid, Monstruo* self) {
+
     pthread_mutex_lock(&grid->locks_monstruos[self->id - 1]);
     int estoy_vivo = self->hp > 0;
     pthread_mutex_unlock(&grid->locks_monstruos[self->id - 1]);
@@ -96,6 +97,13 @@ static void perseguir_y_atacar(Grid* grid, Monstruo* self) {
 
     // ataca al heroe mas cercano
     if (min_dist <= self->attack_range) {
+        
+        // ataca si esta vivo
+        pthread_mutex_lock(&grid->locks_monstruos[self->id - 1]);
+        int aun_vivo = self->hp > 0;
+        pthread_mutex_unlock(&grid->locks_monstruos[self->id - 1]);
+        if (!aun_vivo) return; // si murio antes de atacar
+
         printf("Monstruo %d [ATACANDO] a Héroe %d (dist: %d)\n", self->id, heroe_objetivo->id, min_dist);
         pthread_mutex_lock(&grid->locks_heroes[idx_objetivo]);
         if (heroe_objetivo->hp > 0) {
