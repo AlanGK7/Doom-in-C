@@ -1,7 +1,7 @@
 # Doom-in-C
 
 ## Descripción
-Este proyecto es una simulación concurrente a menor escala del videojuego Doom, desarrollada para el curso de Sistemas Operativos. La simulación utiliza pthreads para gestionar N Héroes y M Monstruos  que interactúan de forma simultánea en un grid 2D.
+Este proyecto es una simulación concurrente a menor escala del videojuego Doom. La simulación utiliza pthreads para gestionar N Héroes y M Monstruos que interactúan de forma simultánea en un grid 2D.
 
 Los monstruos poseen una IA básica que les permite estar PASIVO, ser ALERTADO (por héroes u otros monstruos) , y ATACAR, persiguiendo al héroe vivo más cercano.
 
