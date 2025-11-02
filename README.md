@@ -8,24 +8,24 @@ Los monstruos poseen una IA básica que les permite estar PASIVO, ser ALERTADO (
 ## 🚀 Cómo Ejecutar
 Al clonar el repositorio y acceder a la carpeta como tal se ejecuta el siguiente comando:
 
-'''bash
+```bash
 make clean && make run
-'''
+```
 
-[!important]
+[!IMPORTANT]
 >Existen 4 archivos en el cual se hacen pruebas.
->Se debe modificar la línea:
+>Se debe modificar la este estracto de codigo en *main.c*:
 
 ```C
-// 1. Cargar la configuración
-    // NOTA: Asegúrate de que tu .txt tenga HERO_COUNT y MONSTER_COUNT
-    if (parsear_config("config.txt", &config) != 0) { // <-- CAMBIA ESTO
+// cargar la configuración
+    // Cambia el campo 
+    if (parsear_config("Archivo_ejemplo.txt", &config) != 0) { // <-- CAMBIA ESTO PARA ELEGIR OTRO ARCHIVO DE CONFIGURACION
         fprintf(stderr, "Error al leer config.txt\n");
         return 1;
     }
 ```
 
-## Formato del archivo
+## ⚙️ Formato del archivo
 El parser (parser.c) espera un formato estricto que utiliza guiones bajos (_) para las claves de las entidades.
 Importante: El archivo debe contener HERO_COUNT y MONSTER_COUNT para que el parser pueda asignar la memoria correctamente.
 
